@@ -1,13 +1,14 @@
-from airondatarepository.user import User
 from airondatarepository import encrypt
 from airondatarepository.userrepository import UserRepository
+import test_constants
 
-user = User("Todd Test", "todd@test.com", encrypt.encrypt_password("access"))
 repository = UserRepository()
-id = repository.insert_user(user)
+repository.test_json()
+
+id = repository.insert_user(test_constants.FULL_NAME, test_constants.EMAIL, encrypt.encrypt_password(test_constants.PASSWORD))
 print(id)
 
-if id == -9999:
-    print("Test Failed")
-else:
+if id is not None:
     print("Test Passed")
+else:
+    print("Test Failed")
