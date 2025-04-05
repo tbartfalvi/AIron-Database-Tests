@@ -1,7 +1,7 @@
-from airondatarepository.userrepository import UserRepository
+from airondatarepository.datarepository import DataRepository
 import test_constants
 
-repository = UserRepository()
+repository = DataRepository()
 result = repository.delete_user(test_constants.EMAIL)
 
 if result == False:

@@ -1,8 +1,8 @@
+from airondatarepository.datarepository import DataRepository
 from airondatarepository import encrypt
-from airondatarepository.userrepository import UserRepository
 import test_constants
 
-repository = UserRepository()
+repository = DataRepository()
 repository.test_json()
 
 id = repository.insert_user(test_constants.FULL_NAME, test_constants.EMAIL, encrypt.encrypt_password(test_constants.PASSWORD))
